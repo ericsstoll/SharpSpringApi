@@ -25,6 +25,12 @@ namespace SharpSpring.Console
                 System.Console.WriteLine($"{l.FirstName} {l.LastName}");
             }
 
+            var campaigns = ctx.Get().Campaigns();
+            foreach(ICampaign c in campaigns)
+            {
+                System.Console.WriteLine($"{c.CampaignName}");
+            }
+
             System.Console.ReadLine();
         }
     }

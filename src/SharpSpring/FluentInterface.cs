@@ -12,6 +12,7 @@ namespace SharpSpring
     public interface IGetEntity
     {
         IEnumerable<IAccount> Accounts(int id = 0, int ownerId = 0, int limit = Int32.MaxValue, int offset = 0);
+        IEnumerable<ICampaign> Campaigns(int id = 0, int ownerId = 0, int limit = Int32.MaxValue, int offset = 0);
         IEnumerable<ILead> Leads(int id = 0, int ownerId = 0, int limit = Int32.MaxValue, int offset = 0);
     }
 
@@ -35,6 +36,22 @@ namespace SharpSpring
         string ShippingPostalCode { get; set; }
         string ShippingState { get; set; }
         string ShippingStreetAddress { get; set; }
+    }
+
+    public interface ICampaign
+    {
+        long Id { get; set; }
+        string CampaignName { get; set; }
+        string CampaignType { get; set; }
+        string CampaignAlias { get; set; }
+        string CampaignOrigin { get; set; }
+        int? Qty { get; set; }
+        double? Price { get; set; }
+        double? Goal { get; set; }
+        double? OtherCosts { get; set; }
+        DateTime? StartDate { get; set; }
+        DateTime? EndDate { get; set; }
+        int? IsActive { get; set; }
     }
 
     public interface ILead

@@ -117,6 +117,11 @@ namespace SharpSpring
             return Get<Lead>("getLeads", "lead", limit, offset);
         }
 
+        public IEnumerable<ICampaign> Campaigns(int id = 0, int ownerId = 0, int limit = int.MaxValue, int offset = 0)
+        {
+            return Get<Campaign>("getCampaigns", "campaign", limit, offset);
+        }
+
         private IEnumerable<T> Get<T>(string command, string node, int limit, int offset)
         {
             string response = context.ExecuteGetCommand(command, limit, offset);
