@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <!--*-->
+    <id>Arke.SharpSpring</id>
+    <!--*-->
+    <version>0.1</version>
+    <title>Arke SharpSpring API</title>
+    <!--*-->
+    <authors>Arke</authors>
+    <owners>Eric Stoll</owners>
+<!--
+    <licenseUrl></licenseUrl>
+    <projectUrl></projectUrl>
+    <iconUrl></iconUrl>
+-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--*-->
+    <description>SharpSpring API for .NET</description>
+    <!--*-->
+    <releaseNotes> </releaseNotes>
+    <copyright>2019</copyright>
+    <tags> </tags>
+    <dependencies>
+      <!--
+      <dependency id="SampleDependency" version="1.0" />
+-->
+    </dependencies>
+  </metadata>
+</package>
