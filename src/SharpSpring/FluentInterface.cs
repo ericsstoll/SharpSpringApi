@@ -11,9 +11,11 @@ namespace SharpSpring
 
     public interface IGetEntity
     {
-        IEnumerable<IAccount> Accounts(int id = 0, int ownerId = 0, int limit = Int32.MaxValue, int offset = 0);
-        IEnumerable<ICampaign> Campaigns(int id = 0, int ownerId = 0, int limit = Int32.MaxValue, int offset = 0);
-        IEnumerable<ILead> Leads(int id = 0, int ownerId = 0, int limit = Int32.MaxValue, int offset = 0);
+        IEnumerable<IAccount> Accounts(long id = 0, int ownerId = 0, int limit = Int32.MaxValue, int offset = 0);
+        IEnumerable<ICampaign> Campaigns(long id = 0, int ownerId = 0, int limit = Int32.MaxValue, int offset = 0);
+        IEnumerable<ILead> Leads(long id = 0, int ownerId = 0, int limit = Int32.MaxValue, int offset = 0);
+        IEnumerable<IList> Lists(long id = 0, int ownerId = 0, int limit = Int32.MaxValue, int offset = 0);
+        IEnumerable<IListMember> ListMembers(long id, int limit = Int32.MaxValue, int offset = 0);
     }
 
     public interface IAccount
@@ -87,5 +89,28 @@ namespace SharpSpring
         int? IsUnsubscribed { get; set; }
         DateTime UpdatedTimestamp { get; set; }
         DateTime CreateTimestamp { get; set; }
+    }
+
+    public interface IList
+    {
+        long Id { get; set; }
+        string Name { get; set; }
+        int MemberCount { get; set; }
+        int removedCount { get; set; }
+        DateTime CreateTimestamp { get; set; }
+        string Description { get; set; }
+    }
+
+    public interface IListMember
+    {
+        long Id { get; set; }
+        long ListId { get; set; }
+        long LeadId { get; set; }
+        long MemberId { get; set; }
+        bool IsRemoved { get; set; }
+        string FirstName { get; set; }
+        string LastName { get; set; }
+        string CompanyName { get; set; }
+        string EmailAddress { get; set; }
     }
 }

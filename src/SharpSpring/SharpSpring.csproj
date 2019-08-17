@@ -50,6 +50,8 @@
     <Compile Include="Campaign.cs" />
     <Compile Include="FluentInterface.cs" />
     <Compile Include="Lead.cs" />
+    <Compile Include="List.cs" />
+    <Compile Include="ListMember.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
