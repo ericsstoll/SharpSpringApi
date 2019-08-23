@@ -12,11 +12,23 @@ namespace SharpSpring
         private ApiContextGet apiContextGet;
         private string accountId = "";
         private string secretKey = "";
-        private string baseUrl = "http://api.sharpspring.com/pubapi/v1.2/?";
+        private string baseUrl = "http://api.sharpspring.com/pubapi/v1.2/";
 
         public ApiContext(string connStrName = "SharpSpring")
         {
             ParseConnectionString(connStrName);
+
+            if (string.IsNullOrEmpty(accountId) || string.IsNullOrEmpty(secretKey) || string.IsNullOrEmpty(baseUrl)) throw new Exception("Invalid SharpSpring connection string");
+
+            apiContextGet = new ApiContextGet(this);
+        }
+
+        public ApiContext(string accountId, string secretKey, string baseUrl = "http://api.sharpspring.com/pubapi/v1.2/")
+        {
+            this.accountId = accountId;
+            this.secretKey = secretKey;
+            this.baseUrl = baseUrl;
+
             if (string.IsNullOrEmpty(accountId) || string.IsNullOrEmpty(secretKey) || string.IsNullOrEmpty(baseUrl)) throw new Exception("Invalid SharpSpring connection string");
 
             apiContextGet = new ApiContextGet(this);
