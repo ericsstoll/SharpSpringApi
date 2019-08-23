@@ -10,7 +10,7 @@
     <Product>Arke.SharpSpringApi</Product>
     <Description>.NET library for accessing SharpSpring API</Description>
     <Copyright>2019</Copyright>
-    <Version>0.2</Version>
+    <Version>0.3</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
